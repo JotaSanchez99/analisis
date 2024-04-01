@@ -73,7 +73,7 @@ class InventoryMenu(App):
         self.popup.open()
 
     def add_item(self, instance):
-        id_product = str(uuid4())
+        id_product = self.code_input.text
         name = self.name_input.text
         code = self.code_input.text
         price = self.price_input.text
@@ -81,7 +81,7 @@ class InventoryMenu(App):
         
         if name and code and price and quantity.isdigit():
             self.inventory.append({
-                "ID_Producto": id_product,
+                "ID_Producto": code,  # Usamos 'Codigo' como el ID.
                 "Nombre": name,
                 "Codigo": code,
                 "Precio": float(price),
@@ -90,6 +90,9 @@ class InventoryMenu(App):
             self.update_inventory_label()
             self.save_inventory()
             self.popup.dismiss()
+        else:
+            # caso donde el código ya existe en el inventario.
+            print("Un producto con este código ya existe.")
 
     def remove_item_popup(self, instance):
         content = BoxLayout(orientation='vertical')

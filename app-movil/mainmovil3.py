@@ -11,7 +11,8 @@ from uuid import uuid4
 # Inicializa Firebase Admin.
 # la llave no esta  en doc porqe tenes el proyecto publico ... por obias razones no subire el doc llave mio ... xD
 # confundi el id con el codigo vean como lo arreglan xD es oslo modicar una cosa UwU
-#QUZAS
+#QUZAS   en el main 2 esta arrglo el tema la id hacer lo mismo aca .... 
+
 cred = credentials.Certificate('')
 firebase_admin.initialize_app(cred)
 db = firestore.client()
