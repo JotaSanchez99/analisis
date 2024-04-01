@@ -1,0 +1,28 @@
+
+en nuestro caso esto seria mas un referecia o bien una guia
+al nombre de las variables ya que Firebase es una base de datos nosql
+
+segun yo esto deberia estar en 2FN lo cual deberia bastar para su funcionamiento 
+Productos
+
+ID_Producto: Identificador único (puede ser generado automáticamente por Firestore).
+Nombre: Nombre del producto.
+Codigo: Código único del producto.
+Precio: Precio unitario del producto.
+
+ Usuarios
+
+ID_Usuario: Identificador único (puede ser generado automáticamente por Firestore).
+NombreUsuario: Nombre o identificador único para el usuario.
+Contraseña: Hash de la contraseña del usuario 
+(aunque almacenar contraseñas, incluso en forma de hash, no es la práctica recomendada ya que ...,
+ es mejor manejar la autenticación a través de Firebase Authentication pero queda a gusto depende del tiempo y cual sea mas facil 
+ y cumpla).
+Rol: Tipo de usuario (Administrador, Usuario Regular, bodeguero).
+
+
+Stock
+
+ID_Producto: Referencia o identificador único del producto
+(debería coincidir con el ID_Producto  con Productos siendo esta la foranea... ).
+Cantidad: Cantidad de producto en stock.
