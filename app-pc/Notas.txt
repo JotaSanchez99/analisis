@@ -1,0 +1,1 @@
+modificar el home a la ruta donde tienen instalado python
