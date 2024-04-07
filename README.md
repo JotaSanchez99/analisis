@@ -2,7 +2,9 @@
 
 ## **Sistema ERP: Gestión de Inventario**
 
-Equipo de trabajo: Miguel Contreras; Diego Molina; Diego Reyes Alv.; Diego Reyes Ang.; Jordan Sanchez; Nestor Vilches.
+Equipo de trabajo:
+
+Miguel Contreras; Diego Molina; Diego Reyes Alv.; Diego Reyes Ang.; Jordan Sanchez; Nestor Vilches.
 
 El proyecto tiene como objetivo desarrollar un sistema que capacite a las empresas para gestionar sus inventarios y almacenes de manera eficiente, garantizando un seguimiento preciso y un control efectivo de los recursos de almacenamiento. Además, se pretende crear una interfaz de usuario interactiva y amigable que facilite la navegación y comprensión de las funciones del software, mejorando así la experiencia del usuario. El proceso incluirá un riguroso control de calidad para asegurar que el producto final cumpla con los estándares de calidad establecidos.
 
@@ -47,7 +49,7 @@ Ya entrando a la carpeta creada al haber descomprimido el `ZIP` tendremos que en
 Antes de ejecutar los programas es necesario activar un entorno virtual en el que se posee todo lo necesario para poder trabajar. Para ello se debe ingresar en el `CMD` lo siguiente:
 > ...\analisis> .\.venv\Scripts\activate
 
-<pre>Para desactivarlo ingresa en el `CMD` lo siguiente: 
+<pre>Para desactivarlo ingresa en el CMD lo siguiente: 
  ...\analisis> .\.venv\Scripts\deactivate</pre>
 
 ### **Ejecución**
