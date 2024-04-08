@@ -1,0 +1,243 @@
+ScreenManagement:
+    LoginScreen:
+    RecoverPasswordScreen:
+
+
+# Custom defined pill
+<ListItemWithChip>:
+    theme_text_color: "Custom"
+    text_color: 1, 1, 1, 1
+
+
+
+
+
+<LoginScreen>:
+    name: 'login'
+
+    Image:
+        source: 'images/fondo.jpg'
+        allow_stretch: True
+        keep_ratio: False
+
+    MDCard:
+        orientation: 'vertical'
+        size_hint: .5, .8
+        pos_hint: {"center_x": .5, "center_y": .5}
+
+        
+
+        FitImage:
+            source: 'images/undraw_Login_re_4vu2.png'
+            width: root.width
+            size_hint_y: .4
+
+
+        MDBoxLayout:
+            id: form
+            orientation: 'vertical'
+            size_hint_y: .3
+            width: root.width
+
+            MDTextField:
+                id: user
+                pos_hint: {"center_x": .5,}
+                icon_right: "account"
+                icon_right_color: app.theme_cls.primary_color
+                size_hint_x: .7
+                hint_text: 'Usuario'
+                mode: 'rectangle'
+
+            MDTextField:
+                id: password
+                pos_hint: {"center_x": .5,}
+                password: True
+                icon_right: "eye-off"
+                icon_right_color: app.theme_cls.primary_color
+                size_hint_x: .7
+                hint_text: 'Contraseña'
+                mode: 'rectangle'
+                
+        MDBoxLayout:
+            size_hint_y: .15
+            width: root.width
+
+
+            MDBoxLayout:
+                # pos_hint: {'y': .05,}
+                size_hint: .5, None
+
+                MDCheckbox:
+                    id: keepmeloggedin
+                        
+                MDLabel:
+                    text: "Mantener mi sesión iniciada"
+                
+            MDBoxLayout:
+                size_hint_x: .1
+
+
+            MDBoxLayout:
+                pos_hint: {'y': .40,}
+                size_hint: .3, None
+
+
+                MDRaisedButton:
+                    text: 'Iniciar sesión'
+                    theme_text_color: 'Custom'
+                    color: (1, 0, 0, 1)
+
+                    on_release:
+                        app.switch_window('mainwindow', root.login())
+
+
+        MDBoxLayout:
+            size_hint_y: .15
+            width: root.width
+
+            MDBoxLayout:
+                size_hint_x: .12
+
+
+            MDBoxLayout:
+                pos_hint: {'y': .1,}
+                size_hint: .48, None
+
+                MDLabel:
+                    pos_hint:{'center_x': .3}
+                    text: "¿No recuerdas tu contraseña?"
+                
+
+
+            MDBoxLayout:
+                pos_hint: {'y': .5,}
+                size_hint: .4, None
+
+
+                MDFlatButton:
+                    text: 'Recuperar contraseña'
+                    theme_text_color: 'Custom'
+                    text_color: app.theme_cls.primary_color
+
+                    on_release:
+                        app.root.current = 'recoverpassword'
+                        root.manager.transition.direction = "left"
+
+<RecoverPasswordScreen>:
+    name: 'recoverpassword'
+
+    Image:
+        source: 'images/fondo.jpg'
+        allow_stretch: True
+        keep_ratio: False
+
+    MDCard:
+        orientation: 'vertical'
+        size_hint: .5, .8
+        pos_hint: {"center_x": .5, "center_y": .5}
+
+        
+
+        FitImage:
+            source: 'images/undraw_Forgot_password_re_hxwm.png'
+            width: root.width
+            size_hint_y: .4
+
+
+        MDBoxLayout:
+            id: form
+            orientation: 'vertical'
+            size_hint_y: .3
+            width: root.width
+
+            MDTextField:
+                id: user
+                pos_hint: {"center_x": .5,}
+                icon_right: "account"
+                icon_right_color: app.theme_cls.primary_color
+                size_hint_x: .7
+                hint_text: 'Usuario'
+                mode: 'rectangle'
+
+            MDTextField:
+                id: email
+                pos_hint: {"center_x": .5,}
+                icon_right: "email"
+                icon_right_color: app.theme_cls.primary_color
+                size_hint_x: .7
+                hint_text: 'Correo electrónico'
+                mode: 'rectangle'
+                
+        MDBoxLayout:
+            size_hint_y: .15
+            width: root.width
+
+                
+            MDBoxLayout:
+                size_hint_x: .1
+
+
+            MDBoxLayout:
+                pos_hint: {'y': .40,}
+                size_hint: .2, None
+
+
+                MDRaisedButton:
+                    id: sendrequest
+                    text: 'Enviar solicitud'
+                    theme_text_color: 'Custom'
+                    color: (1, 0, 0, 1)
+
+                    on_release:
+                        app.switch_window('login', root.send())
+                        root.manager.transition.direction = "right"
+
+
+        MDBoxLayout:
+            size_hint_y: .15
+            width: root.width
+
+            MDBoxLayout:
+                size_hint_x: .12
+
+
+            MDBoxLayout:
+                pos_hint: {'y': .1,}
+                size_hint: .48, None
+
+                MDLabel:
+                    pos_hint:{'center_x': .3}
+                    text: "¿Ya te acuerdas?"
+                
+
+
+            MDBoxLayout:
+                pos_hint: {'y': .5,}
+                size_hint: .4, None
+
+
+                MDFlatButton:
+                    text: 'Iniciar Sesión'
+                    theme_text_color: 'Custom'
+                    text_color: app.theme_cls.primary_color
+
+                    on_release:
+                        app.root.current = 'login'
+                        root.manager.transition.direction = "right"
+
+
+<InvalidLoginPopup>:
+    orientation: 'vertical'
+    spacing: '10dp'
+    size_hint: None, None
+    height: "130dp"
+    width: "230dp"
+
+    MDLabel:
+        text: "Nombre de usuario o contraseña incorrectos."
+        font_style: "H6"
+
+    MDLabel:
+        text: 'Ha introducido datos no válidos. Vuelva a intentarlo.'
+        theme_text_color: "Custom"
+        text_color: 1, 0, 0, 1
